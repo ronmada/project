@@ -55,7 +55,7 @@ public class ProductFormController implements Initializable {
 		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
 		Stage primaryStage = new Stage();
 		FXMLLoader loader = new FXMLLoader();
-		Pane root = loader.load(getClass().getResource("/gui/ProductFrame.fxml").openStream());
+		Pane root = loader.load(getClass().getResource("/catalog/ProductFrame.fxml").openStream());
 		Scene scene = new Scene(root);			
 		primaryStage.setScene(scene);		
 		primaryStage.show();

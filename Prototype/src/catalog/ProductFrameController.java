@@ -41,7 +41,7 @@ public class ProductFrameController implements Initializable
 		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
 		Stage primaryStage = new Stage();
 		FXMLLoader loader = new FXMLLoader();
-		Pane root = loader.load(getClass().getResource("/gui/ProductForm.fxml").openStream());
+		Pane root = loader.load(getClass().getResource("/catalog/ProductForm.fxml").openStream());
 		ProductFormController productFormController = loader.getController();		
 		productFormController.loadProduct(CatalogControler.getProducts().get(itemIndex));
 		Scene scene = new Scene(root);			
@@ -50,7 +50,7 @@ public class ProductFrameController implements Initializable
 	}
 	
 	public void start(Stage primaryStage) throws Exception {	
-		Parent root = FXMLLoader.load(getClass().getResource("/gui/ProductFrame.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/catalog/ProductFrame.fxml"));
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
 		primaryStage.show();		

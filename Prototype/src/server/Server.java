@@ -10,6 +10,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import catalog.Product;
+import catalog.ProductFrameController;
+import client.Client;
+import javafx.application.Application;
+import javafx.stage.Stage;
 import ocsf.server.*;
 
 
@@ -17,9 +21,14 @@ import ocsf.server.*;
 public class Server extends AbstractServer
 {
 	final public static int DEFAULT_PORT = 5555;
+	private static String path;
+	private static String username;
+	private static String password;
+	
 	public Server(int port) 
 	{
 		super(port);
+		
 	}
 	/*input : msg (string/product) , client when client send message this function 
 	this function check whether the msg is a string or a products that needs to be update */
@@ -131,7 +140,7 @@ public class Server extends AbstractServer
 		public static void main(String[] args) 
 		  {
 		    int port = 0; //Port to listen on
-
+		    Connection conn;
 		    try
 		    {
 		      port = Integer.parseInt(args[0]); //Get port from command line
@@ -140,9 +149,25 @@ public class Server extends AbstractServer
 		    {
 		      port = DEFAULT_PORT; //Set port to 5555
 		    }
-			
+		   // GuiOpener guiOpener = new GuiOpener();
+		    GuiOpener.init_launch();
+		    System.out.println(path+' '+username+' '+password);
+		    
 		    Server sv = new Server(port);
 		    
+		    try {
+				conn = DriverManager.getConnection(path,username,password);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		    try 
+			 {
+				 conn.close();
+			 }
+			 catch (SQLException e) 
+			 {
+				 e.printStackTrace();
+			 }
 		    try 
 		    {
 		      sv.listen(); //Start listening for connections
@@ -152,5 +177,13 @@ public class Server extends AbstractServer
 		      System.out.println("ERROR - Could not listen for clients!");
 		    }
 		  }
-		
+		public static void setDBAtributers(String pathiy,String user,String pass)
+		{
+			path=pathiy;
+			username=user;
+			password=pass;
+			
+		}
+
+	
 }
