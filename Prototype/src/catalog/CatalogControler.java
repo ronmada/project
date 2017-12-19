@@ -20,7 +20,7 @@ public class CatalogControler extends Application
 	}
 	public void start(Stage primaryStage) throws Exception 
 	{
-		Frame = new ProductFrameController(); // create ProductFrame
+		Frame = new ProductFrameController(); // create ProductFrame fd fds
 		Frame.start(primaryStage);
 	}
 	public static void updateName(Product p)
