@@ -46,7 +46,7 @@ public class ClientConnectToServerGui implements Initializable
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
-	@FXML
+	@FXML////
 	   public void btnListener(ActionEvent event)  throws Exception
 	    {
 	    	((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
