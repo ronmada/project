@@ -48,7 +48,7 @@ public class ProductFormController implements Initializable {
 		this.p=p1;
 		this.txtProductID.setText(p.get_product_ID());
 		this.txtProductName.setText(p.get_product_Name());
-		this.txtProductType.setText(p.get_product_Type());///dfdf
+		this.txtProductType.setText(p.get_product_Type());///dfdfsdfsdf
 	}
 	
 	public void closeProductInfo(ActionEvent event) throws Exception {
