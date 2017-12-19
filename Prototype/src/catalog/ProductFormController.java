@@ -17,9 +17,10 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import client.*;
-public class ProductFormController implements Initializable {
+public class ProductFormController implements Initializable
+{
 	private Product p;
-		
+		 
 	@FXML
 	private Label lblProductID;
 	@FXML
@@ -42,7 +43,7 @@ public class ProductFormController implements Initializable {
 //	@FXML
 //	private ComboBox cmbProductType;	
 	
-	ObservableList<String> list;
+	//ObservableList<String> list;
 		
 	public void loadProduct(Product p1){
 		this.p=p1;
@@ -57,7 +58,7 @@ public class ProductFormController implements Initializable {
 		FXMLLoader loader = new FXMLLoader();
 		Pane root = loader.load(getClass().getResource("/catalog/ProductFrame.fxml").openStream());
 		Scene scene = new Scene(root);			
-		primaryStage.setScene(scene);		
+		primaryStage.setScene(scene);		 
 		primaryStage.show();
 	}
 	

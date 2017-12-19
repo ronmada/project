@@ -1,11 +1,12 @@
 package client;
-import java.awt.event.ActionEvent;
+import javafx.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import catalog.CatalogControler;
 import catalog.ProductFormController;
+import catalog.ProductFrameController;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,33 +32,26 @@ public class ClientConnectToServerGui implements Initializable
     private TextField txtIP;
 
     @FXML
-    void btnListener(ActionEvent event) throws IOException
-    {
-    	((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
-		Stage primaryStage = new Stage();
-		FXMLLoader loader = new FXMLLoader();
-		Pane root = loader.load(getClass().getResource("/catalog/ProductForm.fxml").openStream());
-		ProductFormController productFormController = loader.getController();		
-		productFormController.loadProduct(CatalogControler.getProducts().get(1));
-		Scene scene = new Scene(root);			
-		primaryStage.setScene(scene);		
-		primaryStage.show();
-    }
-
-    @FXML
     void txtListener(ActionEvent event) {
 
     }
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub	
+		//  TODO Auto-generated method stub	
 	}
 	public void start(Stage primaryStage) throws Exception {	
 		Parent root = FXMLLoader.load(getClass().getResource("ClientConnectToServer.fxml"));
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		//Platform.setImplicitExit(false);שורה שצריך להוסיף על מנת שנוכל להשתמש פעמיים בinit launch
 	}
+	@FXML
+	   public void btnListener(ActionEvent event)  throws Exception
+	    {
+	    	((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
+			FXMLLoader loader = new FXMLLoader();
+			Pane root = loader.load(getClass().getResource("/catalog/ProductFrame.fxml").openStream());
+	    	CatalogControler.changeWindowToProductFrame(root);
+	    }
 }

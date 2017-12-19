@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ProductFormController">
+<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="catalog.ProductFormController">
    <children>
       <Label id="lblProductID" layoutX="14.0" layoutY="64.0" text="Product ID:" />
       <Label id="lblProductName" layoutX="14.0" layoutY="103.0" text="Product Name:" />

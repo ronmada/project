@@ -7,6 +7,10 @@ import catalog.Product;
 import catalog.ProductFrameController;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import ocsf.client.AbstractClient;
 
@@ -15,9 +19,10 @@ public class Client extends AbstractClient
 	final public static int DEFAULT_PORT = 5555;
 	int port;
 	static Client client;
+	static Stage s;
 	static boolean mail_box=false;
 	public ArrayList<Product> products;
-	
+	static String host = "";
 	
 	
 	public Client(String host, int port) 
@@ -65,21 +70,11 @@ public class Client extends AbstractClient
 	    System.exit(0);
 	  }
 	  public static void main(String[] args) 
-	  {
-	    String host = "";
-	    //GuiOpener gui=new GuiOpener();
-	    GuiOpener.init_launch();
-	    try
-	    {
-	      host = args[0];
-	    }
-	    catch(ArrayIndexOutOfBoundsException e)
-	    {
-	      host = "localhost";
-	    }
+	  {	   
+	   host = "localhost";   
 	   client= new Client(host, DEFAULT_PORT);
-	   CatalogControler.init_launch(client);	    
-
+	   CatalogControler.setClient(client);
+	   GuiOpener.init_launch();
 	  }
 	  @SuppressWarnings("unchecked")
 	  public void productsRecived(Object o) 
@@ -115,7 +110,7 @@ public class Client extends AbstractClient
 	public static class GuiOpener extends Application
 	  {
 		public ClientConnectToServerGui gui;
-		public  static String [] parameters=null; 
+		public  static String [] parameters=null;
 		
 		public GuiOpener() {}
 		public static void init_launch() 
@@ -124,9 +119,9 @@ public class Client extends AbstractClient
 		}
 		public void start(Stage primaryStage) throws Exception 
 		{
-			gui = new ClientConnectToServerGui(); // create ProductFrame
+			gui=new ClientConnectToServerGui();
 			gui.start(primaryStage);
-		}  
-	  }
+		}
 	  
+}
 }

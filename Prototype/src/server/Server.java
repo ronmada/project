@@ -61,7 +61,8 @@ public class Server extends AbstractServer
 			Connection conn=null;
 			try 
 		    {
-				conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","231184mo");
+				conn = DriverManager.getConnection("jdbc:mysql://"+path,username,password);
+				//conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","231184mo");
 		        System.out.println("SQL connection succeed");		        
 		 	} 
 			catch (SQLException ex) 
@@ -106,7 +107,7 @@ public class Server extends AbstractServer
 			System.out.println(p);
 			try 
 			{
-				conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","231184mo");
+				conn = DriverManager.getConnection("jdbc:mysql://"+path,username,password);
 			} 
 			catch (SQLException e1) 
 			{
@@ -156,18 +157,11 @@ public class Server extends AbstractServer
 		    Server sv = new Server(port);
 		    
 		    try {
-				conn = DriverManager.getConnection(path,username,password);
+				conn = DriverManager.getConnection("jdbc:mysql://"+path,username,password);
+				conn.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-		    try 
-			 {
-				 conn.close();
-			 }
-			 catch (SQLException e) 
-			 {
-				 e.printStackTrace();
-			 }
 		    try 
 		    {
 		      sv.listen(); //Start listening for connections
