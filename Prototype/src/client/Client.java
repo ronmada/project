@@ -42,11 +42,7 @@ public class Client extends AbstractClient
 	    }
 	    catch(IOException e)
 	    {
-<<<<<<< HEAD
-	      System.out.println("Could not send message to server.  Terminating client.");//jhjjh
-=======
-	      System.out.println("Could not send message to server.  Terminating client.");//ujtjytjyt
->>>>>>> branch 'master' of https://github.com/ronmada/project.git
+	      System.out.println("Could not send message to server.  Terminating client.");
 	      quit();
 	    }
 	  }
