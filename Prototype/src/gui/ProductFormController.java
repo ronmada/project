@@ -47,13 +47,9 @@ public class ProductFormController implements Initializable {
 	public void loadProduct(Product p1){
 		this.p=p1;
 		this.txtProductID.setText(p.get_product_ID());
-<<<<<<< HEAD
+
 		this.txtProductName.setText(p.get_product_Name());
 		this.txtProductType.setText(p.get_product_Type());
-=======
-		this.txtProductName.setText(p.get_product_Name());//dsf
-		this.txtProductType.setText(p.get_product_Type());///dfdfsdfsdffgfgsdfsdf
->>>>>>> branch 'master' of https://github.com/ronmada/project.git
 	}
 	
 	public void closeProductInfo(ActionEvent event) throws Exception {
