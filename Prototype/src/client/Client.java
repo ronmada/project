@@ -4,15 +4,21 @@ import java.util.ArrayList;
 
 import catalog.CatalogControler;
 import catalog.Product;
+import catalog.ProductFrameController;
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.stage.Stage;
 import ocsf.client.AbstractClient;
 
-public class Client extends AbstractClient
+public class Client extends AbstractClient 
 {
 	final public static int DEFAULT_PORT = 5555;
 	int port;
 	static Client client;
 	static boolean mail_box=false;
 	public ArrayList<Product> products;
+	
+	
 	
 	public Client(String host, int port) 
 	{
@@ -61,6 +67,8 @@ public class Client extends AbstractClient
 	  public static void main(String[] args) 
 	  {
 	    String host = "";
+	    //GuiOpener gui=new GuiOpener();
+	    GuiOpener.init_launch();
 	    try
 	    {
 	      host = args[0];
@@ -104,4 +112,21 @@ public class Client extends AbstractClient
 	        mail_box=false;
 	        return products;
 	  }
+	public static class GuiOpener extends Application
+	  {
+		public ClientConnectToServerGui gui;
+		public  static String [] parameters=null; 
+		
+		public GuiOpener() {}
+		public static void init_launch() 
+		{
+		    launch(parameters);
+		}
+		public void start(Stage primaryStage) throws Exception 
+		{
+			gui = new ClientConnectToServerGui(); // create ProductFrame
+			gui.start(primaryStage);
+		}  
+	  }
+	  
 }
