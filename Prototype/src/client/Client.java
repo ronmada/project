@@ -1,6 +1,9 @@
 package client;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import catalog.CatalogControler;
+import catalog.Product;
 import ocsf.client.AbstractClient;
 
 public class Client extends AbstractClient

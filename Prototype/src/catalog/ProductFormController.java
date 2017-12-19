@@ -1,8 +1,8 @@
-package gui;
+package catalog;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import client.Product;
+
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

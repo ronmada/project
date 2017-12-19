@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import client.Product;
+import catalog.Product;
 import ocsf.server.*;
 
 

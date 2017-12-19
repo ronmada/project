@@ -1,10 +1,10 @@
-package gui;
+package catalog;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import client.Product;
-import gui.ProductFormController;
+
+import catalog.ProductFormController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

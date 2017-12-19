@@ -1,8 +1,9 @@
-package client;
+package catalog;
 
 import java.util.ArrayList;
 
-import gui.*;
+import catalog.*;
+import client.Client;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

@@ -1,4 +1,4 @@
-package client;
+package catalog;
 
 import java.io.Serializable;
 
