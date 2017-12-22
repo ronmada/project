@@ -71,9 +71,7 @@ public class Client extends AbstractClient
 	  }
 	  public static void main(String[] args) 
 	  {	   
-	   host = "localhost";   
-	   client= new Client(host, DEFAULT_PORT);
-	   CatalogControler.setClient(client);
+	  
 	   GuiOpener.init_launch();
 	  }
 	  @SuppressWarnings("unchecked")
@@ -86,7 +84,14 @@ public class Client extends AbstractClient
 	  {
 	    handleMessageFromClientUI(product);
 	  }
-	  
+	  public static void connectToServer(String ip)
+	  {
+		  host = "localhost"; 
+		  if(!ip.equals(""))host=ip;
+		  client= new Client(host, DEFAULT_PORT);
+		  CatalogControler.setClient(client);
+		  
+	  }
 	  public  ArrayList<Product> getProducts()
 	  /*this function activate when someone asks for product arraylist
 	   * we send recive to the function handleMessageFromClientUI that sends 
