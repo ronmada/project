@@ -49,6 +49,7 @@ public class ClientConnectToServerGui implements Initializable
 	@FXML////
 	   public void btnListener(ActionEvent event)  throws Exception
 	    {
+			Client.connectToServer(txtIP.getText());
 	    	((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
 			FXMLLoader loader = new FXMLLoader();
 			Pane root = loader.load(getClass().getResource("/catalog/ProductFrame.fxml").openStream());
