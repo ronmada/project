@@ -12,7 +12,7 @@ public class GuiOpener extends Application
 	
 	public static void init_launch() 
 	{
-		System.out.println("DSadas");
+		//System.out.println("DSadas");
 	    Application.launch(parameters);
 	}
 	
